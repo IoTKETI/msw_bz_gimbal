@@ -3,8 +3,6 @@
   "target": "armv6",
   "description": "[name] [portnum] [baudrate]",
   "scripts": "./lib_bz_gimbal 0",
-  "data": [
-    "YAW"
-  ],
-  "control": ["Control_Move"]
+  "data": ["YAW", "PITCH"],
+  "control": ["Control_Yaw", "Control_Pitch"]
 }
