@@ -122,10 +122,14 @@ function runLib(obj_lib) {
 
         run_lib.on('exit', function(code) {
             console.log('exit: ' + code);
+
+            setTimeout(init, 1000);
         });
 
         run_lib.on('error', function(code) {
             console.log('error: ' + code);
+
+            setTimeout(init, 1000);
         });
     }
     catch (e) {
