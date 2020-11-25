@@ -1,9 +1,10 @@
-        name: 'msw_sparrow_gimbal',				// 'lib_sparrow_air',
-        target: 'armv6',
-        description: "[name] [gimbal_id]",
-        scripts: './lib_sparrow_gimbal 0',			// './lib_sparrow_air /dev/ttyUSB4 115200',
-	data: ['YAW'],
-        control: ['Control_Move']
-    };
-    config.lib.push(add_lib);
+{
+  "name": "lib_bz_gimbal",
+  "target": "armv6",
+  "description": "[name] [portnum] [baudrate]",
+  "scripts": "./lib_bz_gimbal 0",
+  "data": [
+    "YAW"
+  ],
+  "control": ["Control_Move"]
 }
