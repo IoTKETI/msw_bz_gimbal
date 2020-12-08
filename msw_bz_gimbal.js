@@ -123,13 +123,11 @@ function runLib(obj_lib) {
         run_lib.on('exit', function(code) {
             console.log('exit: ' + code);
 
-            setTimeout(init, 1000);
+            setTimeout(runLib, 3000, obj_lib);
         });
 
         run_lib.on('error', function(code) {
             console.log('error: ' + code);
-
-            setTimeout(init, 1000);
         });
     }
     catch (e) {
@@ -232,11 +230,11 @@ setTimeout(init, 1000);
 function parseDataMission(topic, str_message) {
     try {
         // User define Code
-        // var obj_lib_data = JSON.parse(str_message);
-        // if(fc.hasOwnProperty('global_position_int')) {
-        //     Object.assign(obj_lib_data, JSON.parse(JSON.stringify(fc['global_position_int'])));
-        // }
-        // str_message = JSON.stringify(obj_lib_data);
+        var obj_lib_data = JSON.parse(str_message);
+        if(fc.hasOwnProperty('global_position_int')) {
+            Object.assign(obj_lib_data, JSON.parse(JSON.stringify(fc['global_position_int'])));
+        }
+        str_message = JSON.stringify(obj_lib_data);
 
         ///////////////////////////////////////////////////////////////////////
 
