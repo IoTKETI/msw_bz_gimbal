@@ -51,10 +51,10 @@ catch (e) {
     add_lib = {
         name: 'lib_bz_gimbal',
         target: 'armv6',
-        description: "[name] [gimbal_id]",
-        scripts: './lib_bz_gimbal 0',
-        data: ['YAW', 'PITCH'],
-        control: ['Control_Yaw', 'Control_Pitch']
+        description: '[name]',
+        scripts: './lib_bz_gimbal',
+        data: ['Status'],											// {"Moving": "RIGHT/LEFT/Up/DOWN/STOP"}
+        control: ['Control_Move']									// {Control_Move = "RIGHT/LEFT/UP/DOWN/STOP"}
     };
     config.lib.push(add_lib);
 }
@@ -123,11 +123,13 @@ function runLib(obj_lib) {
         run_lib.on('exit', function(code) {
             console.log('exit: ' + code);
 
-            setTimeout(runLib, 3000, obj_lib);
+            setTimeout(init, 1000);
         });
 
         run_lib.on('error', function(code) {
             console.log('error: ' + code);
+
+            setTimeout(init, 1000);
         });
     }
     catch (e) {
@@ -230,11 +232,11 @@ setTimeout(init, 1000);
 function parseDataMission(topic, str_message) {
     try {
         // User define Code
-        var obj_lib_data = JSON.parse(str_message);
-        if(fc.hasOwnProperty('global_position_int')) {
-            Object.assign(obj_lib_data, JSON.parse(JSON.stringify(fc['global_position_int'])));
-        }
-        str_message = JSON.stringify(obj_lib_data);
+        // var obj_lib_data = JSON.parse(str_message);
+        // if(fc.hasOwnProperty('global_position_int')) {
+        //     Object.assign(obj_lib_data, JSON.parse(JSON.stringify(fc['global_position_int'])));
+        // }
+        // str_message = JSON.stringify(obj_lib_data);
 
         ///////////////////////////////////////////////////////////////////////
 
