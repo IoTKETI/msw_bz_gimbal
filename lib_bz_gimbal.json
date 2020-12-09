@@ -3,6 +3,6 @@
 	"target"		:	"armv6",
 	"description"	:	"[name]",
 	"scripts"		:	"./lib_bz_gimbal",
-	"data"			:	["Status"],
-	"control"		:	["Control_Move"]
+	"data"			:	["GIMBAL"],
+	"control"		:	["Gimbal_Control"]
 }
