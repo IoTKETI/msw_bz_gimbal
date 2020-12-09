@@ -51,10 +51,10 @@ catch (e) {
     add_lib = {
         name: 'lib_bz_gimbal',
         target: 'armv6',
-        description: "[name] [gimbal_id]",
-        scripts: './lib_bz_gimbal 0',
-        data: ['YAW', 'PITCH'],
-        control: ['Control_Yaw', 'Control_Pitch']
+        description: '[name]',
+        scripts: './lib_bz_gimbal',
+        data: ['Status'],											// {"Moving": "Right/Left/Up/Down/Stop"}
+        control: ['Control_Move']									// {Control_Move = "Right/Left/Up/Down/Stop"}
     };
     config.lib.push(add_lib);
 }
