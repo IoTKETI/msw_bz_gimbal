@@ -53,8 +53,8 @@ catch (e) {
         target: 'armv6',
         description: '[name]',
         scripts: './lib_bz_gimbal',
-        data: ['Status'],											// {"Moving": "RIGHT/LEFT/Up/DOWN/STOP"}
-        control: ['Control_Move']									// {Control_Move = "RIGHT/LEFT/UP/DOWN/STOP"}
+        data: ['GIMBAL'],											// {"Moving": "RIGHT/LEFT/Up/DOWN/STOP"}
+        control: ['Gimbal_Control']									// {Control_Move = "RIGHT/LEFT/UP/DOWN/STOP"}
     };
     config.lib.push(add_lib);
 }
